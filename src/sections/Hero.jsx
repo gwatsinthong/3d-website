@@ -1,9 +1,7 @@
 import React from 'react'
-
-const words = [
-    { text: 'Ideas', imgPath: '/images/ideas.svg' },
-    { text: 'Concepts', imgPath: '/images/concepts.svg' }
-]
+import { words } from '../constants'
+import Button from '../components/Button'
+import HeroExperience from '../components/HeroModels/HeroExperience'
 
 const Hero = () => {
   return (
@@ -23,7 +21,12 @@ const Hero = () => {
                                 <span className="wrapper">
                                     {words.map((word) => (
                                         <span key={word.text} className="flex items-center md:gap-3 gap-1 pb-2">
-                                            <img src={word.imgPath} alt={word.text} className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50" />
+                                            <img 
+                                                src={word.imgPath} 
+                                                alt={word.text} 
+                                                className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50" 
+                                            />
+                                            <span>{word.text}</span>
                                         </span>
                                     ))}
                                 </span>
@@ -32,10 +35,24 @@ const Hero = () => {
                         <h1>into Real Projects</h1>
                         <h1>that Deliver Results</h1>
                     </div>
+                        <p className="text-white-50 md:text-xl realtive z-10 pointer-events-none">
+                            Hi, I'm Gwatsin, a designer-developer with a passion for creating digital experiences.
+                        </p>
+                        <Button 
+                            className="md:w-80 md:h-16 w-60 h-12"
+                            id="button"
+                            text="See my work"
+                        />
                 </div>
             </header>
 
             {/* RIGHT HERO CONTENT */}
+            <figure>
+                <div className="hero-3d-layout">
+                    <HeroExperience />
+                </div>
+            </figure>
+
         </div>
     </section>
   )
